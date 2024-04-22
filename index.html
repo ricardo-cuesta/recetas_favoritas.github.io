@@ -9,15 +9,52 @@
 
     </head>
     <body>
+
+
+
+
+
         <div class="card">
+
+            <select id="comida" onchange="actualizar()">
+                <option value="recetas" selected>recetas</option>
+                <option value="ingredientes">ingredientes</option>
+                <option value="sites">comidas por lugares</option>
+
+
+
+
+
+              </select>
+                <script>
+                  function actualizar() {
+                    var select = document.getElementById('comida');
+                    var value = select.options[select.selectedIndex].value;
+                    console.log(value); // en
+                  }
+              </script>
+
             <div class="search">
-                <input type="text" placeholder="comidas" spellcheck="false">
+
+
+
+
+
+
+
+
+
+
                 <button><img src="images/search.png"> </button>
             </div>
+
             <div class="error">
                 <p>no válido</p>
             </div>
-            <div class="receta">               
+            <div class="receta"> 
+                 
+             
+                        
                 
                 <h2 class="menu">..</h2>
                 <div class="details">

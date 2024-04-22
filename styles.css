@@ -5,10 +5,6 @@
     box-sizing: border-box;
 }
 
-body{
-    background-color: #222;
-}
-
 .card{
     width: 90%;
     max-width: 1570px;
@@ -108,3 +104,33 @@ body{
     margin-top: 10px;
     display: none;
 }
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    height: 100vh; 
+    background-color: #f1f1f1;
+  }
+
+input {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+  }
+
+label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+    
+  }
+
+select {
+    margin-bottom: 10px;
+    margin-top: 10px;
+    
+  }
