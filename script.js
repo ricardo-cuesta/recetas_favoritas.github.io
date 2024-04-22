@@ -1,5 +1,9 @@
 const apiUrl =
 "https://www.themealdb.com/api/json/v1/1/search.php?s="
+const apiUrl2 =
+"https://www.themealdb.com/api/json/v1/1/search.php?s="
+const apiUrl3 =
+"https://www.themealdb.com/api/json/v1/1/list.php?a=list"
 
 async function consultarApiC(url) {
   try {
@@ -22,29 +26,46 @@ async function obtenerDatosC(url) {
   const datos = await consultarApiC(url); 
 
   let meal_01=datos.meals[2].strInstructions 
-   //console.log(datos.meals[2].strArea )
+   console.log(datos.meals[2].strArea )
    //console.log(value);
    console.log(value);
 
-if (value="recetas") {console.log("0");
+
+   switch(value){
+    case 'recetas':
+       console.log("0");
+       //let lee_menu = document.querySelector(".menu"); 
+       let receta = document.querySelector(".menu");
+       receta.innerHTML = meal_01;
+       let comida = document.querySelector(".value");
+       comida.innerHTML = "01";
+
+
+       break
+    case 'ingredientes':
+        console.log("1");
+ 
+ 
+ 
+        break
+    case 'sites':
+       console.log("2");
+       console.log(datos.meals[2].strArea )
+       receta.innerHTML = meal_01;
+
+
+
+
+
+
+       break
+    default:
+      console.log("categoria_3");
+       break
+ }
   
-} else {console.log("1");
-  
-}
-
-
-
-
-
-
-
-
-
-
-   
-   let lee_menu = document.querySelector(".menu"); 
-   let receta = document.querySelector(".menu");
-   receta.innerHTML = meal_01;
+ 
+;
    //console.log(meal_01)
   
   const contError = document.querySelector(".error");
