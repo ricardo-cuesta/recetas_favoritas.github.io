@@ -11,8 +11,8 @@ body{
 
 .card{
     width: 90%;
-    max-width: 470px;
-    background: linear-gradient(135deg, #00feba, #5b548a);
+    max-width: 1570px;
+    background: linear-gradient(35deg, #0505b1d5, #5b548a);
     color: #fff;
     margin: 100px auto 0;
     border-radius: 20px;
@@ -51,21 +51,21 @@ body{
 }
 
 .search button img{
-    width: 16px;
+    width: 17px;
 }
 
-.weather-icon{
+.receta-icon{
     width: 170px;
     margin-top: 30px;
 }
 
-.weather h1{
+.receta h1{
     font-size: 80px;
     font-weight: 500;
 
 }
 
-.weather h1{
+.receta h1{
     font-size: 45px;
     font-weight: 400;
     margin-top: -10px;    
@@ -95,8 +95,10 @@ body{
     margin-top: -6px;
 }
 
-.weather{
-    display:none;
+.receta{
+    font-size: 13px;
+    color: rgb(229, 217, 217);
+   
 }
 
 .error{
