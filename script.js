@@ -5,7 +5,7 @@ const apiUrl2 =
 const apiUrl3 =
 "https://www.themealdb.com/api/json/v1/1/list.php?a=list"
 let indices = [];
-let cuenta=0;
+let cuenta=0;let platoN=1;
 
 async function consultarApiC(url) {
   try {
@@ -25,36 +25,37 @@ async function obtenerDatosC(url) {
 
   const datos = await consultarApiC(url); 
 
-  let meal_01=datos.meals[2].strInstructions 
-   console.log(datos.meals[2].strArea )
+  let meal_01=datos.meals[2].strInstructions ;
+   console.log(datos.meals[2].strArea );
+   
 
    switch(value){
-    case 'recetas':
-      limpiarMenu ()
-       console.log("0");
-       //let lee_menu = document.querySelector(".menu"); 
-       let receta = document.querySelector(".menu");
-       receta.innerHTML = meal_01;
-       let comida = document.querySelector(".value");
-       limpiarMenu();
-       //limpiarCards();
-       //limpiarOneCard();
+    case 'nombrePlato':
+      limpiarMenu ();
+       console.log("nombre del Plato");       
+  
+       plato_();
 
        break
     case 'ingredientes':
-      limpiarMenu ()
-      plato()
-        //console.log("1");
+      limpiarMenu ();
+      ingedienteP();
+      console.log("ingredientes");
   
-        break
+      break
     case 'sites':
-      limpiarMenu ()
-       console.log("2");
-       cargarPais() 
+      limpiarMenu ();
+      console.log("sites");
+      cargarPais() ;
+     break
+    case 'categoria':
+      limpiarMenu ();
+      console.log("categoria");
+      categoria() 
 
-       break
+      break
  }
-  
+ 
   const contError = document.querySelector(".error");
   const contWeather = document.querySelector(".weather");
 }
@@ -63,6 +64,8 @@ const searchButton = document.querySelector(".search button");
 const searchInput = document.querySelector(".search input");
 
 console.log(`a la consulta a la api:`);
+//plato_()
+receta();
 
 searchButton.addEventListener("click", () => {
   
@@ -71,8 +74,8 @@ searchButton.addEventListener("click", () => {
   obtenerDatosC(url);
   
 });
-async function plato(){
-  console.log("probando cargar plato");
+async function ingedienteP(){
+  console.log("probando ingrediente ");
 
   const respuesta2 = await fetch('https://www.themealdb.com/api/json/v1/1/list.php?i=list');
   const meal_02 = await respuesta2.json();
@@ -85,7 +88,7 @@ async function plato(){
     cuenta=x;     
 
     let lista="<li><a class='dropdown-item' id='"+x+"' onclick='pintarCard()' href='#'>"+meal_02.meals[x].strIngredient+"</a></li>"
-    console.log(lista) 
+    console.log(lista); 
      document.getElementsByClassName("dropdown-menu")[0].innerHTML += lista; 
   }
 }
@@ -95,14 +98,11 @@ async function cargarPais() {
   const respuesta = await fetch('https://www.themealdb.com/api/json/v1/1/list.php?a=list');
   const meal_02 = await respuesta.json();
   console.log(meal_02.meals[0].strArea);
-
   for (x=0;x<meal_02.meals.length;x++) {
-
     let pais = "meals["+x+"].strArea";
     cuenta=x;     
-
     let lista="<li><a class='dropdown-item' id='"+x+"' onclick='pintarCard()' href='#'>"+meal_02.meals[x].strArea+"</a></li>"
-     console.log(lista) 
+     //console.log(lista) 
      document.getElementsByClassName("dropdown-menu")[0].innerHTML += lista; 
   }  }
   
@@ -113,7 +113,7 @@ async function cargarPais() {
         for (x=0;x<cuenta;x++) { console.log(x);
           
           let lista="<li><a class='dropdown-item' id='"+x+"' onclick='pintarCard()' href='#'>"+""+"</a></li>"
-          console.log(lista) 
+          //console.log(lista) 
           document.getElementsByClassName("dropdown-menu")[0].innerHTML -= lista; 
                  
         }  
@@ -144,4 +144,50 @@ function limpiarOneCard() {
 }
 
 
+async function plato_(){
+  console.log("probando ingrediente ");
+
+  const respuesta2 = await fetch('https://www.themealdb.com/api/json/v1/1/search.php?s=');
+  const meal_02 = await respuesta2.json();
+  //console.log(meal_02);
+  console.log(meal_02.meals[0].strIngredient);
+  
+  for (x=0;x<meal_02.meals.length;x++) {
+
+    let pais = "meals["+x+"].strArea";
+    cuenta=x;     
+
+    let lista="<li><a class='dropdown-item' id='"+x+"' onclick='pintarCard()' href='#'>"+meal_02.meals[x].strIngredient+"</a></li>";
+    console.log(lista) ;
+     document.getElementsByClassName("dropdown-menu")[0].innerHTML += lista; 
+  }
+}
+
+
+
+  async function receta() { 
+    console.log("probando receta  "); 
+    console.log(platoN);
+    x=platoN;
+  
+        const respuesta = await fetch('https://www.themealdb.com/api/json/v1/1/search.php?s=');
+      const meal_02 = await respuesta.json();
+      console.log(x);      
+        let recetas=meal_02.meals[x].strInstructions
+        cuenta=x; 
+        document.getElementsByClassName("menu")[0].innerHTML += recetas;
+         
+        }
+        async function categoria() {
+          console.log("probando cargar apis");
+          const respuesta = await fetch('https://www.themealdb.com/api/json/v1/1/list.php?a=list');
+          const meal_02 = await respuesta.json();
+          console.log(meal_02.meals[0].strArea);
+          for (x=0;x<meal_02.meals.length;x++) {
+            let pais = "meals["+x+"].strArea";
+            cuenta=x; 
+            let lista="<li><a class='dropdown-item' id='"+x+"' onclick='pintarCard()' href='#'>"+meal_02.meals[x].strArea+"</a></li>"
+           
+             document.getElementsByClassName("dropdown-menu")[0].innerHTML += lista; 
+          }  }
 
