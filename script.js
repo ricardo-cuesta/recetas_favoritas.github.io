@@ -88,8 +88,9 @@ async function ingedienteP(){
     cuenta=x;     
 
     let lista="<li><a class='dropdown-item' id='"+x+"' onclick='pintarCard()' href='#'>"+meal_02.meals[x].strIngredient+"</a></li>"
-    console.log(lista); 
+    //
      document.getElementsByClassName("dropdown-menu")[0].innerHTML += lista; 
+     //console.log(meal_02); 
   }
 }
 

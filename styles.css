@@ -1,8 +1,9 @@
 *{
-    margin: 0;
+    margin: 30px;
     padding: 0;
-    font-family: 'Poppins', sans-serif;
+    font-family:Verdana;
     box-sizing: content-box;
+    font-size: small;
 }
 
 .comida{
@@ -23,18 +24,7 @@
     justify-content: space-between;
 }
 
-.search input{
-    border: 0;
-    outline: 0;
-    background: #ebfffc;
-    color: #555;
-    padding: 10px 25px;
-    height: 60px;
-    border-radius: 30px;
-    flex: 1;
-    margin-right: 16px;
-    font-size: 18px;
-}
+
 
 .search button{
     border: 0;
@@ -106,33 +96,41 @@
 }
 
 #cuerpo {
-    padding: px;
+    padding: 35px;
+    display:block;
+    grid-template-columns: repeat(5, 1fr);
+    margin: 1px;
+    
+    position: center;
+    height: 1px;
+    object-fit: contain;
+   align-content: center;
+    background-position: center;
+    
+    cursor: pointer;
+    
+    }
+#comida {
+    padding: 3px;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    margin: 30px;
-    align-self:self-end;
+    grid-template-columns: repeat(3,1fr);
+    margin: 35px;
+    align-self: center;
     position: relative;
-    height: 60px;
+    height: 35px;
     object-fit: contain;
     background-size: cover;
     background-position: center;
     transition: transform .2s;
     cursor: pointer;
-    
-    }
-    #comida {
-        padding: 3px;
-        display: grid;
-        grid-template-columns: repeat(3,1fr);
-        margin: 35px;
-        align-self: center;
-        position: relative;
-        height: 35px;
-        object-fit: contain;
-        background-size: cover;
-        background-position: center;
-        transition: transform .2s;
-        cursor: pointer;
-        
-        }
+  
+   }
+
+        div {
+            width: 300px;
+            border: 1px solid rgb(0, 2, 128);
+            padding: 25px;
+            margin: 10px;
+          }
+
    
