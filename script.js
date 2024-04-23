@@ -51,7 +51,7 @@ async function obtenerDatosC(url) {
     case 'categoria':
       limpiarMenu ();
       console.log("categoria");
-      categoria() 
+      categoria(); 
 
       break
  }
@@ -150,14 +150,14 @@ async function plato_(){
   const respuesta2 = await fetch('https://www.themealdb.com/api/json/v1/1/search.php?s=');
   const meal_02 = await respuesta2.json();
   //console.log(meal_02);
-  console.log(meal_02.meals[0].strIngredient);
+  console.log(meal_02.meals[0].srtMeal);
   
   for (x=0;x<meal_02.meals.length;x++) {
 
     let pais = "meals["+x+"].strArea";
     cuenta=x;     
 
-    let lista="<li><a class='dropdown-item' id='"+x+"' onclick='pintarCard()' href='#'>"+meal_02.meals[x].strIngredient+"</a></li>";
+    let lista="<li><a class='dropdown-item' id='"+x+"' onclick='pintarCard()' href='#'>"+meal_02.meals[x].strMeal+"</a></li>";
     console.log(lista) ;
      document.getElementsByClassName("dropdown-menu")[0].innerHTML += lista; 
   }
@@ -178,16 +178,22 @@ async function plato_(){
         document.getElementsByClassName("menu")[0].innerHTML += recetas;
          
         }
-        async function categoria() {
-          console.log("probando cargar apis");
-          const respuesta = await fetch('https://www.themealdb.com/api/json/v1/1/list.php?a=list');
-          const meal_02 = await respuesta.json();
-          console.log(meal_02.meals[0].strArea);
+        async function categoria(){
+          console.log("probando ingrediente ");
+        
+          const respuesta2 = await fetch('https://www.themealdb.com/api/json/v1/1/search.php?s=');
+          const meal_02 = await respuesta2.json();
+          //console.log(meal_02);
+          console.log(meal_02.meals[0].strCategory);
+          console.log(meal_02.meals);
           for (x=0;x<meal_02.meals.length;x++) {
+        
             let pais = "meals["+x+"].strArea";
-            cuenta=x; 
-            let lista="<li><a class='dropdown-item' id='"+x+"' onclick='pintarCard()' href='#'>"+meal_02.meals[x].strArea+"</a></li>"
-           
+            cuenta=x;     
+        
+            let lista="<li><a class='dropdown-item' id='"+x+"' onclick='pintarCard()' href='#'>"+meal_02.meals[x].strCategory+"</a></li>";
+            console.log(lista) ;
              document.getElementsByClassName("dropdown-menu")[0].innerHTML += lista; 
-          }  }
+          }
+        }
 
