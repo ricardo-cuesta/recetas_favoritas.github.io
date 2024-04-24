@@ -1,90 +1,22 @@
-*{
-    margin: 30px;
-    padding: 0;
-    font-family:Verdana;
-    box-sizing: content-box;
-    font-size: small;
-}
-
-.comida{
-    width: 10%;
-    max-width: 70px;
-    background: linear-gradient(35deg, #0505b1d5, #5b548a);
-    color: #fff;
-    margin: 100px auto 0;
-    border-radius: 20px;
-    padding: 40px 35px;
-    text-align: center;
-}
-
-.search{
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-
 
 .search button{
-    border: 0;
-    outline: 0;
-    background: #4943c0;
+    border: 30;
+    outline: 1000;
+    background: #ececf1;
     border-radius: 50%;
-    width: 60px;
-    height: 60px;
-    cursor: pointer;
+    width: 35px;
+    height: 35px;
+    cursor:pointer;
+    
+   
 }
 
 .search button img{
-    width: 17px;
-}
+    width: 15px;
+    color: blanchedalmond;
+    border-inline-color: black;
+    
 
-.receta-icon{
-    width: 170px;
-    margin-top: 30px;
-}
-
-.recetas h1{
-    font-size: 80px;
-    font-weight: 500;
-
-}
-
-.receta h1{
-    font-size: 45px;
-    font-weight: 400;
-    margin-top: -10px;    
-}
-
-.details{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 20px;
-    margin-top: 50px;
-}
-
-.col{
-    display: flex;
-    align-items: center;
-    text-align: left;
-}
-
-.col img{
-    width: 40px;
-    margin-right: 10px;
-}
-
-.humidity, .wind{
-    font-size: 28px;
-    margin-top: -6px;
-}
-
-.receta{
-    font-size: 13px;
-    color: rgb(229, 217, 217);
-   
 }
 
 .error{
@@ -95,26 +27,23 @@
     display: none;
 }
 
-#cuerpo {
-    padding: 35px;
-    display:block;
-    grid-template-columns: repeat(5, 1fr);
-    margin: 1px;
-    
-    position: center;
-    height: 1px;
-    object-fit: contain;
-   align-content: center;
-    background-position: center;
-    
-    cursor: pointer;
-    
-    }
+.cuerpo {
+    border: 1px solid black;
+    background-color: lightgray;
+    padding: 10px;
+    margin: 11px;
+    width: 130px;
+    height: auto;
+    margin-right: 150;
+    margin-left: 150;
+
+  }
 #comida {
+    box-sizing: border-box;
     padding: 3px;
     display: grid;
     grid-template-columns: repeat(3,1fr);
-    margin: 35px;
+    margin: px;
     align-self: center;
     position: relative;
     height: 35px;
@@ -126,11 +55,43 @@
   
    }
 
-        div {
-            width: 300px;
-            border: 1px solid rgb(0, 2, 128);
-            padding: 25px;
-            margin: 10px;
-          }
-
    
+
+  .menu {
+    border: 1px solid rgb(68, 51, 153);
+    background-color: rgb(244, 240, 240);
+    padding: 40px;
+    margin: 40px;
+    width: auto;
+    height:auto;
+
+  }
+  .plato{
+    border: 1px solid black;
+    
+    padding: 45px;
+    margin: 25px;
+    width: 100px;
+    height: 10px;
+  }
+  li {
+
+    padding: 10px;
+    align-items: center;
+    align-content: center;
+    margin-left: 300px;
+    margin-right: 10px;
+    height: 10px;
+    color:white;
+  
+
+  }
+  .dropdown-menu {
+    grid-template-columns: repeat(1, 1fr);
+    position:inherit;
+    object-fit: contain;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+  }
