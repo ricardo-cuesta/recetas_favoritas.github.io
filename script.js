@@ -69,7 +69,7 @@ const searchButton = document.querySelector(".search button");
 const searchInput = document.querySelector(".search input");
 
 console.log(`a la consulta a la api:`);
-//plato_()
+//fase(1);
 
 
 searchButton.addEventListener("click", () => {
@@ -82,6 +82,7 @@ searchButton.addEventListener("click", () => {
 async function ingedienteP(){
   Menuid=1;
   console.log("probando ingrediente ");
+  
 
   const respuesta2 = await fetch('https://www.themealdb.com/api/json/v1/1/list.php?i=list');
   const meal_02 = await respuesta2.json();
@@ -269,6 +270,44 @@ async function ingred(id){
      console.log("ingrediente:..",meal_02.meals[id].strIngredient);
      let recetas2="ingrediente: "+meal_02.meals[id].strIngredient;
      document.getElementsByClassName("plato_")[0].innerHTML = recetas2;
+     ingrediente=meal_02.meals[id].strIngredient;
+     fasePlato(ingrediente);
 
+
+     
   
 }
+
+
+
+async function fasePlato(ingrediente){
+
+  const respuesta2 = await fetch('https://www.themealdb.com/api/json/v1/1/filter.php?i='+ingrediente);
+  const meal_02 = await respuesta2.json();
+ 
+ 
+
+     //console.log("ingrediente:..",meal_02.meals[id].strIngredient);
+     let recetas2="plato: "+meal_02;
+     //document.getElementsByClassName("plato_")[0].innerHTML = recetas2;
+     console.log("plato x ingre:..",meal_02);
+
+
+for (x=0;x<meal_02.meals.length;x++) {
+
+  let pais = "meals["+x+"].strArea";
+  cuenta=x;     
+  Menuid=0;
+
+  let lista="<li><a class='dropdown-item' id='"+x+"' onclick='pintarCard()' href='#'>"+meal_02.meals[x].strMeal+"</a></li>";
+  //console.log(lista) ;
+   document.getElementsByClassName("dropdown-menu")[0].innerHTML += lista; 
+
+
+}
+
+
+    
+  
+}
+
