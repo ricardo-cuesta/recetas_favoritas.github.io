@@ -429,17 +429,19 @@ async function Pais_plato(){
 async function Xcategoria(id){
  
 
-  const respuesta2 = await fetch('https://www.themealdb.com/api/json/v1/1/list.php?a=list');
+  const respuesta2 = await fetch('https://www.themealdb.com/api/json/v1/1/search.php?s=');
+//  const respuesta2 = await fetch('https://www.themealdb.com/api/json/v1/1/list.php?c=list');
+  //https://www.themealdb.com/api/json/v1/1/search.php?s=
   const meal_02 = await respuesta2.json();
  
  
 
      //console.log("__categoria..",meal_02.meals[id].strArea);
-     let categoria2="  categoria: "+meal_02.meals[id].strArea;
+     let categoria2="  categoria: "+meal_02.meals[id].strCategory;
      document.getElementsByClassName("plato_")[0].innerHTML = categoria2;
-     lugar=meal_02.meals[id].strArea;
+     lugar=meal_02.meals[id].strCategory;
      categoriaxPlato(lugar);
-     console.log("el categoria es..",lugar);
+     console.log("l categoria es..",meal_02.meals[id].strCategory);
 
 
      
@@ -453,7 +455,7 @@ async function categoriaxPlato(lugar){
   console.log("x categoria_:..",lugar);
 
 
-  const respuesta2 = await fetch('https://www.themealdb.com/api/json/v1/1/filter.php?a='+lugar);
+  const respuesta2 = await fetch('https://www.themealdb.com/api/json/v1/1/filter.php?c='+lugar);
   const meal_02 = await respuesta2.json();
  
  
@@ -488,7 +490,7 @@ async function categoria_plato(){
   var id = event.target.id;
   //console.log("plato x categoria..",lugar) ;
 
-  const respuesta2 = await fetch('https://www.themealdb.com/api/json/v1/1/filter.php?a='+lugar);
+  const respuesta2 = await fetch('https://www.themealdb.com/api/json/v1/1/filter.php?c='+lugar);
   const meal_02 = await respuesta2.json();
  console.log(meal_02.meals[id].strMeal);
   let lista="<li><a class='dropdown-item' id='"+0+"' onclick='platoxingred()' href='#'>"+meal_02.meals[id].strMeal+"</a></li>";
