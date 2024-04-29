@@ -193,6 +193,41 @@ async function plato_(){
         
         document.getElementsByClassName("plato_")[0].innerHTML = recetas2;
 
+
+        
+
+
+        
+  recetas2="\ningrediente1: "+meal_02.meals[0].strIngredient1+"<br></br>";
+  document.getElementsByClassName("menu1")[0].innerHTML = recetas2;
+  recetas2="\ningrediente2: "+meal_02.meals[0].strIngredient2;
+  document.getElementsByClassName("menu1")[0].innerHTML += recetas2+"<br></br>";
+  recetas2="\ningrediente3: "+meal_02.meals[0].strIngredient3;
+  document.getElementsByClassName("menu1")[0].innerHTML += recetas2+"<br></br>";
+  recetas2="\ningrediente4: "+meal_02.meals[0].strIngredient4;
+  document.getElementsByClassName("menu1")[0].innerHTML += recetas2+"<br></br>";
+  recetas2="\ningrediente5: "+meal_02.meals[0].strIngredient5;
+  document.getElementsByClassName("menu1")[0].innerHTML += recetas2+"<br></br>";
+  recetas2="\ningrediente6: "+meal_02.meals[0].strIngredient6;
+  document.getElementsByClassName("menu1")[0].innerHTML += recetas2+"<br></br>";
+  recetas2="\ningrediente7: "+meal_02.meals[0].strIngredient7;
+  document.getElementsByClassName("menu1")[0].innerHTML += recetas2+"<br></br>";
+  recetas2="\ningrediente8: "+meal_02.meals[0].strIngredient8;
+  document.getElementsByClassName("menu1")[0].innerHTML += recetas2+"<br></br>";
+  recetas2="\ningrediente9: "+meal_02.meals[0].strIngredient9;
+  document.getElementsByClassName("menu1")[0].innerHTML += recetas2+"<br></br>";
+  recetas2="\ningrediente10: "+meal_02.meals[0].strIngredient10;
+  document.getElementsByClassName("menu1")[0].innerHTML += recetas2+"<br></br>";
+  recetas2="\ningredient11: "+meal_02.meals[0].strIngredient11;
+  document.getElementsByClassName("menu1")[0].innerHTML += recetas2+"<br></br>";  
+  recetas2="\ningredient12: "+meal_02.meals[0].strIngredient11;
+  document.getElementsByClassName("menu1")[0].innerHTML += recetas2+"<br></br>";
+  recetas2="\ningredient13: "+meal_02.meals[0].strIngredient11;
+  document.getElementsByClassName("menu1")[0].innerHTML += recetas2+"<br></br>";
+  recetas2="\ningredient14: "+meal_02.meals[0].strIngredient11;
+  document.getElementsByClassName("menu1")[0].innerHTML += recetas2+"<br></br>";
+  recetas2="\ningredient15: "+meal_02.meals[0].strIngredient11;
+  document.getElementsByClassName("menu1")[0].innerHTML += recetas2+"<br></br>";
          
   }
         async function categoria(){
@@ -323,19 +358,71 @@ async function platoxingred(){
   let lista="<li><a class='dropdown-item' id='"+0+"' onclick='platoxingred()' href='#'>"+meal_02.meals[id].strMeal+"</a></li>";
   let plato_=meal_02.meals[id].strMeal;
   console.log("platoc ing..",plato_) ;
-   //document.getElementsByClassName("dropdown-menu")[0].innerHTML = lista; 
-   //document.getElementsByClassName("plato_")[id].innerHTML = lista;
+  console.log("platoc ing..",plato_) ;
+
+
 
    document.getElementsByClassName("plato_")[0].innerHTML = lista;
    //recetaxplato(plato_);
 
    const respuesta = await fetch('https://www.themealdb.com/api/json/v1/1/search.php?s='+plato_);
    const meal_05 = await respuesta.json();
-   receta=meal_05.meals[0].strInstructions;
-   console.log(meal_05.meals[0].strInstructions);
+   let receta=meal_05.meals[0].strInstructions;  
+   //console.log(meal_05.meals[0]);
    document.getElementsByClassName("menu")[0].innerHTML = receta;
-         
-  }
+   
+
+  let ingredientex="meal_05.meals[0].strIngredient"+x;
+
+   //let ingredient="meal_05.meals[0].strIngredient"+x; 
+  console.log(ingredientex);
+  console.log(meal_05.meals[0].strIngredient1);
+
+  
+  let recetas2="\ningrediente1: "+meal_05.meals[0].strIngredient1+"<br></br>";
+     document.getElementsByClassName("menu1")[0].innerHTML = recetas2;
+     recetas2="\ningrediente2: "+meal_05.meals[0].strIngredient2;
+     document.getElementsByClassName("menu1")[0].innerHTML += recetas2+"<br></br>";
+     recetas2="\ningrediente3: "+meal_05.meals[0].strIngredient3;
+     document.getElementsByClassName("menu1")[0].innerHTML += recetas2+"<br></br>";
+     recetas2="\ningrediente4: "+meal_05.meals[0].strIngredient4;
+     document.getElementsByClassName("menu1")[0].innerHTML += recetas2+"<br></br>";
+     recetas2="\ningrediente5: "+meal_05.meals[0].strIngredient5;
+     document.getElementsByClassName("menu1")[0].innerHTML += recetas2+"<br></br>";
+     recetas2="\ningrediente6: "+meal_05.meals[0].strIngredient6;
+     document.getElementsByClassName("menu1")[0].innerHTML += recetas2+"<br></br>";
+     recetas2="\ningrediente7: "+meal_05.meals[0].strIngredient7;
+     document.getElementsByClassName("menu1")[0].innerHTML += recetas2+"<br></br>";
+     recetas2="\ningrediente8: "+meal_05.meals[0].strIngredient8;
+     document.getElementsByClassName("menu1")[0].innerHTML += recetas2+"<br></br>";
+     recetas2="\ningrediente9: "+meal_05.meals[0].strIngredient9;
+     document.getElementsByClassName("menu1")[0].innerHTML += recetas2+"<br></br>";
+     recetas2="\ningrediente10: "+meal_05.meals[0].strIngredient10;
+     document.getElementsByClassName("menu1")[0].innerHTML += recetas2+"<br></br>";
+     recetas2="\ningredient11: "+meal_05.meals[0].strIngredient11;
+     document.getElementsByClassName("menu1")[0].innerHTML += recetas2+"<br></br>";
+     recetas2="\ningredient12: "+meal_05.meals[0].strIngredient11;
+     document.getElementsByClassName("menu1")[0].innerHTML += recetas2+"<br></br>";
+
+     recetas2="\ningredient13: "+meal_05.meals[0].strIngredient11;
+     document.getElementsByClassName("menu1")[0].innerHTML += recetas2+"<br></br>";
+     recetas2="\ningredient14: "+meal_05.meals[0].strIngredient11;
+     document.getElementsByClassName("menu1")[0].innerHTML += recetas2+"<br></br>";
+     recetas2="\ningredient15: "+meal_05.meals[0].strIngredient11;
+     document.getElementsByClassName("menu1")[0].innerHTML += recetas2+"<br></br>";
+     recetas2="\ningredient16: "+meal_05.meals[0].strIngredient11;
+     document.getElementsByClassName("menu1")[0].innerHTML += recetas2+"<br></br>";
+     recetas2="\ningredient17: "+meal_05.meals[0].strIngredient11;
+     document.getElementsByClassName("menu1")[0].innerHTML += recetas2+"<br></br>";
+
+
+
+
+
+     
+
+}    
+  
 
 
 
@@ -419,7 +506,35 @@ async function Pais_plato(){
    receta=meal_05.meals[0].strInstructions;
    console.log(meal_05.meals[0].strInstructions);
    document.getElementsByClassName("menu")[0].innerHTML = receta;
-         
+
+
+   let recetas2="\ningrediente1: "+meal_05.meals[0].strIngredient1+"<br></br>";
+   document.getElementsByClassName("menu1")[0].innerHTML = recetas2;
+   recetas2="\ningrediente2: "+meal_05.meals[0].strIngredient2;
+   document.getElementsByClassName("menu1")[0].innerHTML += recetas2+"<br></br>";
+   recetas2="\ningrediente3: "+meal_05.meals[0].strIngredient3;
+   document.getElementsByClassName("menu1")[0].innerHTML += recetas2+"<br></br>";
+   recetas2="\ningrediente4: "+meal_05.meals[0].strIngredient4;
+   document.getElementsByClassName("menu1")[0].innerHTML += recetas2+"<br></br>";
+   recetas2="\ningrediente5: "+meal_05.meals[0].strIngredient5;
+   document.getElementsByClassName("menu1")[0].innerHTML += recetas2+"<br></br>";
+   recetas2="\ningrediente6: "+meal_05.meals[0].strIngredient6;
+   document.getElementsByClassName("menu1")[0].innerHTML += recetas2+"<br></br>";
+   recetas2="\ningrediente7: "+meal_05.meals[0].strIngredient7;
+   document.getElementsByClassName("menu1")[0].innerHTML += recetas2+"<br></br>";
+   recetas2="\ningrediente8: "+meal_05.meals[0].strIngredient8;
+   document.getElementsByClassName("menu1")[0].innerHTML += recetas2+"<br></br>";
+   recetas2="\ningrediente9: "+meal_05.meals[0].strIngredient9;
+   document.getElementsByClassName("menu1")[0].innerHTML += recetas2+"<br></br>";
+   recetas2="\ningrediente10: "+meal_05.meals[0].strIngredient10;
+   document.getElementsByClassName("menu1")[0].innerHTML += recetas2+"<br></br>";
+   recetas2="\ningredient11: "+meal_05.meals[0].strIngredient11;
+   document.getElementsByClassName("menu1")[0].innerHTML += recetas2+"<br></br>";
+
+
+
+    
+   limpiarMenu ();
   }
 
 
@@ -507,5 +622,33 @@ async function categoria_plato(){
    receta=meal_05.meals[0].strInstructions;
    console.log(meal_05.meals[0].strInstructions);
    document.getElementsByClassName("menu")[0].innerHTML = receta;
+
+
+
+   let recetas2="\ningrediente1: "+meal_05.meals[0].strIngredient1+"<br></br>";
+   document.getElementsByClassName("menu1")[0].innerHTML = recetas2;
+   recetas2="\ningrediente2: "+meal_05.meals[0].strIngredient2;
+   document.getElementsByClassName("menu1")[0].innerHTML += recetas2+"<br></br>";
+   recetas2="\ningrediente3: "+meal_05.meals[0].strIngredient3;
+   document.getElementsByClassName("menu1")[0].innerHTML += recetas2+"<br></br>";
+   recetas2="\ningrediente4: "+meal_05.meals[0].strIngredient4;
+   document.getElementsByClassName("menu1")[0].innerHTML += recetas2+"<br></br>";
+   recetas2="\ningrediente5: "+meal_05.meals[0].strIngredient5;
+   document.getElementsByClassName("menu1")[0].innerHTML += recetas2+"<br></br>";
+   recetas2="\ningrediente6: "+meal_05.meals[0].strIngredient6;
+   document.getElementsByClassName("menu1")[0].innerHTML += recetas2+"<br></br>";
+   recetas2="\ningrediente7: "+meal_05.meals[0].strIngredient7;
+   document.getElementsByClassName("menu1")[0].innerHTML += recetas2+"<br></br>";
+   recetas2="\ningrediente8: "+meal_05.meals[0].strIngredient8;
+   document.getElementsByClassName("menu1")[0].innerHTML += recetas2+"<br></br>";
+   recetas2="\ningrediente9: "+meal_05.meals[0].strIngredient9;
+   document.getElementsByClassName("menu1")[0].innerHTML += recetas2+"<br></br>";
+   recetas2="\ningrediente10: "+meal_05.meals[0].strIngredient10;
+   document.getElementsByClassName("menu1")[0].innerHTML += recetas2+"<br></br>";
+   recetas2="\ningrediente11: "+meal_05.meals[0].strIngredient11;
+   document.getElementsByClassName("menu1")[0].innerHTML += recetas2+"<br></br>";
+
+
+
          
   }
