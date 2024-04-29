@@ -530,7 +530,20 @@ async function Pais_plato(){
    document.getElementsByClassName("menu1")[0].innerHTML += recetas2+"<br></br>";
    recetas2="\ningredient11: "+meal_05.meals[0].strIngredient11;
    document.getElementsByClassName("menu1")[0].innerHTML += recetas2+"<br></br>";
-
+   recetas2="\ningredient12: "+meal_05.meals[0].strIngredient11;
+   document.getElementsByClassName("menu1")[0].innerHTML += recetas2+"<br></br>";
+   recetas2="\ningredient13: "+meal_05.meals[0].strIngredient11;
+   document.getElementsByClassName("menu1")[0].innerHTML += recetas2+"<br></br>";
+   recetas2="\ningredient14: "+meal_05.meals[0].strIngredient11;
+   document.getElementsByClassName("menu1")[0].innerHTML += recetas2+"<br></br>";
+   recetas2="\ningredient15: "+meal_05.meals[0].strIngredient11;
+   document.getElementsByClassName("menu1")[0].innerHTML += recetas2+"<br></br>";
+   recetas2="\ningredient16: "+meal_05.meals[0].strIngredient11;
+   document.getElementsByClassName("menu1")[0].innerHTML += recetas2+"<br></br>";
+   recetas2="\ningredient11: "+meal_05.meals[0].strIngredient11;
+   document.getElementsByClassName("menu1")[0].innerHTML += recetas2+"<br></br>";
+   recetas2="\ningredient17: "+meal_05.meals[0].strIngredient11;
+   document.getElementsByClassName("menu1")[0].innerHTML += recetas2+"<br></br>";
 
 
     
@@ -647,6 +660,11 @@ async function categoria_plato(){
    document.getElementsByClassName("menu1")[0].innerHTML += recetas2+"<br></br>";
    recetas2="\ningrediente11: "+meal_05.meals[0].strIngredient11;
    document.getElementsByClassName("menu1")[0].innerHTML += recetas2+"<br></br>";
+
+
+
+   console.log(meal_05.meals[0]);
+   document.getElementsByClassName("foto")[0].innerHTML ="<img src="+"https:"+"//https://www.themealdb.com/images/media/meals/oe8rg51699014028.jpg";
 
 
 
